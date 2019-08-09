@@ -136,13 +136,33 @@ table{
   min-height: 100%;
 }
 
+.dropdown-content{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid rgba(204, 204, 204, 0.418);
+  background-color: #4e6c7000;
+  background: transparent;
+  -webkit-transition: 0.5s;
+  color: white;
+  font-family: 'Share Tech Mono', monospace;
+  transition: 0.5s;
+  outline: none;
+}
+\
 
+
+.dropdown-content :focus {
+  border: 3px solid #555;
+}
+}
 </style>
-
 
 </head>
 
 <body>
+<script src="valid.js"></script>
 
 <div class="content">
   <br>
@@ -151,42 +171,55 @@ table{
     <h1>
         Akatsuki
     </h1>
-<form>
+<form onsubmit="return (validate())" name="form" method="GET">
   <table align="center" class="tab" >
     <tr>
       <td>Name    : </td>
-      <td><input type="text" name= "fullname" class="ip"></td>
+      <td><input type="text" id="name" class="ip"></td>
     </tr>
     <tr>
-        <td>E-mail  : </td>
-        <td><input type="text" name="email" class="ip"></td>
+      <td>E-mail  : </td>
+      <td><input type="text" id="email" class="ip"></td>
     </tr>
     <tr>
-      <td>Gender   : </td>
+      <td>Phone no.:</td>
+      <td><input type="text" id="phone" class="ip"></td>
+    </tr>
+    <tr>
+      <td>Gender: </td>
       <td>
         <input type="radio" name="gender" value="male" checked> Male<br>
         <input type="radio" name="gender" value="female"> Female<br>
       </td>
     </tr>
     <tr>
-      <td>Story of your life in 200 words:</td>
+      <td>Village:</td>
+      <td> 
+        <select class="dropdown-content">
+          <option value="konaha">Konohagukure</option>
+          <option value="suna">Sunagakure</option>
+          <option value="kumo">Kumogakure</option>
+          <option value="iwa">Iwagakure</option>
+          <option value="kiri">Kirigakure</option>
+        </select> 
+      </td>
+    </tr>
+    <tr>
+      <td>Story of your life :</td>
       <td>
-        <textarea type="text" name="message" rows="10" cols="15" class="ip"></textarea> 
+        <textarea type="text"  rows="4" cols="15" class="ip" id="story"></textarea> 
       </td>
     </tr>
     <tr>
       <td>Any badass shit you did?</td>
       <td>
-        <textarea type="text" name="message" rows="10" cols="15" class="ip"></textarea> 
+        <textarea type="text"  rows="4" cols="15" class="ip" id="badass"></textarea> 
       </td>
     </tr>
     
     <tr>
       <td>Sure to join us? There's no turning back</td>
-      <td><button type="reset" value="Button">Submit</button></td>
-    </tr>
-    <tr>
-        <td><a href="confirm.html"><u>click here</u></a> to continue</td>
+      <td><input type="submit" value="Submit" ></td>
     </tr>
 
   </table>
